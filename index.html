@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="aset/pysall.jpeg" alt="Foto Anda">
+      <h1>Portofolio Pribadi</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><button onclick="showHome()" data-target="home">Home</button></li>
+        <li><button onclick="showAbout()" data-target="about">About</button></li>
+        <li><button onclick="showSkills()" data-target="skills">Skills</button></li>
+        <li><button onclick="showContact()" data-target="contact">Contact</button></li>
+      </ul>
+    </nav>
+    <section id="home" class="content">
+        <h2>Selamat datang di Portofolio Saya</h2>
+        <p>Website ini merupakan portofolio pribadi saya yang dibuat untuk memenuhi tugas dari Infinite Learning. Saya senang membagikan keterampilan dan pengalaman saya dalam pengembangan web melalui proyek-proyek yang telah saya kerjakan.</p>
+        <p>Silakan jelajahi halaman lain untuk mengetahui lebih lanjut tentang saya, keterampilan saya, dan cara untuk menghubungi saya.</p>
+      </section>
+    <section id="about" class="content">
+      <h2>Tentang Saya</h2>
+      <p>Saya adalah seorang mahasiswa yang sedang menempuh studi di Universitas Kuningan. Saat ini, saya tengah mengikuti program studi independent dengan Infinite Learning sebagai mitra.</p>
+      <p>Saya memiliki minat yang besar dalam bidang pengembangan web dan desain antarmuka pengguna. Saya senang mempelajari teknologi baru dan selalu bersemangat untuk meningkatkan keterampilan saya.</p>
+      <p>Jika Anda memiliki pertanyaan lebih lanjut atau ingin berdiskusi, jangan ragu untuk menghubungi saya!</p>
+    </section>
+    <section id="skills" class="content">
+      <h2>Keterampilan</h2>
+      <p>Saya memiliki pengetahuan dasar tentang HTML dan CSS yang saya peroleh dari perkuliahan saya. Saya juga memiliki keterampilan dalam mendesain antarmuka pengguna (UI) menggunakan perangkat lunak desain seperti Figma.</p>
+      <p>Selain itu, saya aktif belajar dan terus meningkatkan keterampilan saya dalam pengembangan web dan desain. Saya berkomitmen untuk menjadi seorang profesional yang handal dalam industri ini.</p>
+    </section>
+    <section id="contact" class="content">
+      <h2>Kontak</h2>
+      <div class="contact-info">
+        <div>
+          <img src="aset/ig.png" alt="Instagram">
+          <span>@pyysal19</span>
+        </div>
+        <div>
+          <img src="aset/wa.png" alt="WhatsApp">
+          <span>085642076269</span>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <p>&copy; 2024 Portofolio Pribadi</p>
+    </footer>
+  </div>
+
+  <script>
+    function showHome() {
+      document.getElementById('home').style.display = 'block';
+      document.getElementById('about').style.display = 'none';
+      document.getElementById('skills').style.display = 'none';
+      document.getElementById('contact').style.display = 'none';
+      setActiveButton('home');
+    }
+
+    function showAbout() {
+      document.getElementById('home').style.display = 'none';
+      document.getElementById('about').style.display = 'block';
+      document.getElementById('skills').style.display = 'none';
+      document.getElementById('contact').style.display = 'none';
+      setActiveButton('about');
+    }
+
+    function showSkills() {
+      document.getElementById('home').style.display = 'none';
+      document.getElementById('about').style.display = 'none';
+      document.getElementById('skills').style.display = 'block';
+      document.getElementById('contact').style.display = 'none';
+      setActiveButton('skills');
+    }
+
+    function showContact() {
+      document.getElementById('home').style.display = 'none';
+      document.getElementById('about').style.display = 'none';
+      document.getElementById('skills').style.display = 'none';
+      document.getElementById('contact').style.display = 'block';
+      setActiveButton('contact');
+    }
+
+    function setActiveButton(buttonId) {
+      var buttons = document.querySelectorAll('nav ul li button');
+      buttons.forEach(button => {
+        button.classList.remove('active');
+      });
+      document.querySelector('nav ul li button[data-target="' + buttonId + '"]').classList.add('active');
+    }
+
+    window.onload = showHome; // Memanggil fungsi showHome saat halaman pertama kali dimuat
+  </script>
+</body>
+</html>
